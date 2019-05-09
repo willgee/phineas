@@ -1,0 +1,74 @@
+#data-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.data-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.data-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+#cardFive svg {
+  height: 500px;
+  width: 500px;
+}
+
+#cardFive text {
+  font-size: 10px;
+  text-anchor: middle;
+  fill: #4f442b;
+}
+#cardFive g > text.active {
+  font-size: 30px;
+}
+
+#cardFive circle {
+  fill: #75739f;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+#cardFive circle.active {
+  fill: #fe9922;
+}
+
+#cardFive circle.inactive {
+  fill: #c4b9ac;
+}
+
+/* #barViz text {
+  font: 10px sans-serif;
+}
+
+#barViz rect.background {
+  fill: white;
+}
+
+#barViz .axis {
+  shape-rendering: crispEdges;
+}
+
+#barViz .axis path,
+#barViz .axis line {
+  fill: none;
+  stroke: #000;
+} */
+
+#barViz rect {
+  fill: #333;
+  opacity: 0.3;
+  stroke: white;
+}
+
+#cardNine .axis line {
+  stroke: burlywood;
+  stroke-width: 1.6px;
+  opacity: 0.75;
+}

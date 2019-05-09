@@ -1,0 +1,87 @@
+<div id="header">
+  <span class="header-spacer"></span>
+  <span class="header-text">PLATYPUS</span>
+</div>
+<div id="main-content">
+  <div id="outlet" [ngClass]="{'pushed': isExpanded}">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div id="sidebar-nav">
+  <a id="WLCM" #WLCM class="nowrap" (click)="toggleNavDetail(WLCM.id)" routerLink="/platypus" routerLinkActive="active-link"><i class="fas fa-home"></i><span class="info">Welcome</span></a>
+  <a id="GEO" #GEO class="nowrap" (click)="toggleNavDetail(GEO.id)" routerLink="/geo" routerLinkActive="active-link"> <i class="fas fa-globe"></i><span class="info">Geospatial</span></a>
+  <a id="DATA" #DATA class="nowrap" (click)="toggleNavDetail(DATA.id)" routerLink="/data" routerLinkActive="active-link"> <i class="fas fa-stream"></i><span class="info">Data/ETL</span></a>
+  <a id="NLP" #NLP class="nowrap" (click)="toggleNavDetail(NLP.id)" routerLink="/nlp" routerLinkActive="active-link"> <i class="fas fa-dna"></i><span class="info">NLP</span></a>
+  <a id="VIZ" #VIZ class="nowrap" (click)="toggleNavDetail(VIZ.id)" routerLink="/viz" routerLinkActive="active-link"> <i class="fas fa-drafting-compass"></i><span class="info">Vizualize</span></a>
+  <a id="SRCH" #SRCH class="nowrap" (click)="toggleNavDetail(SRCH.id)" routerLink="/search" routerLinkActive="active-link"> <i class="far fa-compass"></i><span class="info">Search</span></a>
+</div>
+<div id="nav-geo" class="nav-detail" [ngClass]="{'expanded': currentNavDetail.GEO}">
+  <button class="accordion"  #Geo1 (click)="onPanelSelect(Geo1.nextElementSibling)" >Geo 1</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+  <button class="accordion"  #Geo2 (click)="onPanelSelect(Geo2.nextElementSibling)">Geo 2</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+  <button class="accordion"  #Geo3 (click)="onPanelSelect(Geo3.nextElementSibling)">Geo 3</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+</div>
+<div id="nav-data" class="nav-detail" [ngClass]="{'expanded': currentNavDetail.DATA}">
+  <button class="accordion"  #Data1 (click)="onPanelSelect(Data1.nextElementSibling)" >Data 1</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+  <button class="accordion"  #Data2 (click)="onPanelSelect(Data2.nextElementSibling)">Data 2</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+  <button class="accordion"  #Data3 (click)="onPanelSelect(Data3.nextElementSibling)">Data 3</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+</div>
+<div id="nav-nlp" class="nav-detail" [ngClass]="{'expanded': currentNavDetail.NLP}">
+  <button class="accordion"  #Nlp1 (click)="onPanelSelect(Nlp1.nextElementSibling)" >Nlp 1</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+  <button class="accordion"  #Nlp2 (click)="onPanelSelect(Nlp2.nextElementSibling)">Nlp 2</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+  <button class="accordion"  #Nlp3 (click)="onPanelSelect(Nlp3.nextElementSibling)">Nlp 3</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+</div>
+<div id="nav-viz" class="nav-detail" [ngClass]="{'expanded': currentNavDetail.VIZ}">
+  <button class="accordion"  #Viz1 (click)="onPanelSelect(Viz1.nextElementSibling)" >Viz 1</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+  <button class="accordion"  #Viz2 (click)="onPanelSelect(Viz2.nextElementSibling)">Viz 2</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+  <button class="accordion"  #Viz3 (click)="onPanelSelect(Viz3.nextElementSibling)">Viz 3</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+</div>
+<div id="nav-srch" class="nav-detail" [ngClass]="{'expanded': currentNavDetail.SRCH}">
+  <button class="accordion"  #Srch1 (click)="onPanelSelect(Srch1.nextElementSibling)" >Search 1</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+  <button class="accordion"  #Srch2 (click)="onPanelSelect(Srch2.nextElementSibling)">Search 2</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+  <button class="accordion"  #Srch3 (click)="onPanelSelect(Srch3.nextElementSibling)">Search 3</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+</div>

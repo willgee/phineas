@@ -1,0 +1,132 @@
+#main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: #142252;
+  width: 100%;
+  z-index: 5; /* Must be greater than 4 to render above font awesome icons*/
+}
+
+.header-text {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 30px;
+  margin: 10px;
+}
+
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+#sidebar-nav {
+  top: 50px;
+  height: 100%;
+  width: 50px;
+  /* width: 160px; */
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  background-color: #062f3c;
+  overflow-x: hidden;
+  padding-top: 16px;
+  transition: 0.2s;
+}
+
+#sidebar-nav .nowrap {
+  white-space: nowrap;
+}
+
+#sidebar-nav .info {
+  margin-left: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#sidebar-nav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+#sidebar-nav a:hover {
+  background: #25749a;
+  color: #4eb0b7;
+}
+
+#sidebar-nav .active-link {
+  background: #25749a;
+  color: #4eb0b7;
+  border-left: 3px solid #4eb0b7;
+  padding-left: 13px; /* Adjust the padding to keep icons aligned after drawing the border*/
+}
+
+/* #sidebar-nav:hover {
+    width: 160px;
+} */
+
+.nav-detail {
+  top: 50px;
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  z-index: 1;
+  left: 50px;
+  background-color: whitesmoke;
+  overflow-x: hidden;
+  /* padding-top: 16px; */
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap; /* Prevent text wrapping as the panel slides in and out*/
+}
+
+.nav-detail.expanded {
+  width: 110px;
+}
+
+#outlet {
+  margin-top: 50px;
+  margin-left: 50px;
+  transition: margin-left 0.5s;
+}
+
+#outlet.pushed {
+  margin-left: 170px;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active,
+.accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
