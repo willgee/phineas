@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { FormsModule } from '@angular/forms';
+import { CardModule } from 'primeng/card';
+import { RatingModule } from 'primeng/rating';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +27,12 @@ import { NlpComponent } from './nlp/nlp.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    InputSwitchModule,
+    CardModule,
+    RatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

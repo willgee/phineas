@@ -1,3 +1,111 @@
-<p>
-  search works!
-</p>
+<div id="card-container">
+  <p-card  *ngFor="let survey of surveysView" header="{{survey.projectTitle}}" subheader="{{survey.poc.firstName}} {{survey.poc.lastName}}" [style]="{width: '360px', margin: '10px'}" styleClass="ui-card-shadow">
+    <p-header>
+      <div class="card-header">
+          <div class="card-icon">
+            <i class="{{survey.icon}}"></i>
+          </div>
+          <div class="rating-row">
+            <div class="rating-labels">
+              <div *ngFor="let question of survey.questions">{{question.label}}</div>             
+            </div>
+            <div class="rating-stars">
+              <p-rating *ngFor="let question of survey.questions" [readonly]="true" [ngModel]="question.rating" [cancel]="false" stars="4"></p-rating>              
+            </div>
+          </div>
+      </div>
+    </p-header>
+    <div class="feedback">{{survey.feedback}}</div>
+    <p-footer class="submit-date">
+        {{survey.timeStamp | date}} {{survey.timeStamp | date:'h:mm a'}}
+    </p-footer>
+  </p-card>
+</div>
+<div id="toggle-filter">
+  <div class="card">
+      <div class="card-body">
+          <div class="toggle-filter-item">
+              <!-- <label class="switch" id="A4" #A4 (click)="onFilterSelect(A4.id)">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+              </label> -->
+              <p-inputSwitch [(ngModel)]="filterObject['A4']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                  A4
+              </div>
+          </div>
+          <div class="toggle-filter-item">
+              <p-inputSwitch [(ngModel)]="filterObject['Agile JCITA']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                  Agile JCITA
+              </div>
+          </div>
+          <div class="toggle-filter-item">
+            <p-inputSwitch [(ngModel)]="filterObject['Agile Workforce']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                  Agile Workforce
+              </div>
+          </div>
+          <div class="toggle-filter-item">
+            <p-inputSwitch [(ngModel)]="filterObject['Asset Space']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                  Asset Space
+              </div>
+          </div>
+          <div class="toggle-filter-item">
+            <p-inputSwitch [(ngModel)]="filterObject['CCDB']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                  CCDB
+              </div>
+          </div>
+          <div class="toggle-filter-item">
+            <p-inputSwitch [(ngModel)]="filterObject['CHROME']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                  CHROME
+              </div>
+          </div>
+          <div class="toggle-filter-item">
+            <p-inputSwitch [(ngModel)]="filterObject['OWL']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                 OWL
+              </div>
+          </div>
+          <div class="toggle-filter-item">
+            <p-inputSwitch [(ngModel)]="filterObject['CORE D']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                  CORE D
+              </div>
+          </div>
+          <div class="toggle-filter-item">
+            <p-inputSwitch [(ngModel)]="filterObject['CRATE']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                  CRATE
+              </div>
+          </div>
+          <div class="toggle-filter-item">
+            <p-inputSwitch [(ngModel)]="filterObject['COLISEUM']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                  COLISEUM
+              </div>
+          </div>
+          <div class="toggle-filter-item">
+            <p-inputSwitch [(ngModel)]="filterObject['DICE']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                  DICE
+              </div>
+          </div>
+          <div class="toggle-filter-item">
+            <p-inputSwitch [(ngModel)]="filterObject['RIPTIDE']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                  RIPTIDE
+              </div>
+          </div>
+          <div class="toggle-filter-item">
+            <p-inputSwitch [(ngModel)]="filterObject['SCRM TAC']" (onChange)="onFilterSelect($event)" ></p-inputSwitch>
+              <div class="toggle-filter-text">
+                 SCRM TAC
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
